@@ -1,11 +1,6 @@
 'use strict';
 
-angular.module('massiveOctoBatmanApp', [
-  'ngCookies',
-  'ngResource',
-  'ngSanitize',
-  'ngRoute'
-])
+angular.module('myApp', [])
   .config(function ($routeProvider) {
     $routeProvider
       .when('/', {
