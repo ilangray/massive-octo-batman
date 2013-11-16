@@ -1,3 +1,5 @@
+When you pull, run npm install && bower install. Then run grunt server to load it up in the browser. Node code goes in server/ & angular in app/. You will also have to have grunt/yo/bower installed, plus ruby & compass. And some other things i cant think of right now.
+
 Application starter
 ================
 
