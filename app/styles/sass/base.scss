@@ -1,0 +1,34 @@
+// colors
+$white:#fff;
+$grey: #e2e2e2;
+$greyDark:#888;
+$purple: lighten(#4F2958, 25%);
+$blueDark: #5B7C8D;
+$blueLight: #5299B1;
+$green: #A6F6AF;
+$red: #D34836;
+$black:#333;
+
+// opaque colors
+$greyDarkOp: RGBa(90,90,90,.5);
+
+
+html, body {
+  background:$white;
+  background-color:$white;
+  width:100%;
+  min-height:100%;
+  height:100%;
+}
+
+.table {
+	width:100%;
+
+	thead {
+		th {
+			text-transform: uppercase;
+			background:$greyDark;
+			color:$white;
+		}
+	}
+}

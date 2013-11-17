@@ -1,17 +1,12 @@
-@import "bourbon/bourbon";
-@import "base";
-@import "../../node_modules/foundation/scss/foundation";
-
-html, body {
+body.home {
   background-color:none;
-  background-image:url("../images/tuftsBlur.png");
+  @include background-image(url("../images/tuftsBlur.png"));
   background-size:cover;
-
 }
 
 #search-area {
   background:$greyDarkOp;
-  margin-top:140px;
+  margin-top:110px;
   padding:20px;
   @include border-bottom-radius(4px);
   @include border-top-radius(4px);
@@ -27,38 +22,49 @@ html, body {
 
     h3 {
       color:$white;
-      font-weight:100;
+      font-weight:300;
       margin-bottom:1em;
       padding:5px 0;
     }
   }
 
-  input {
+  input[type="text"] {
     font-size:24px;
+    margin-bottom: 0px;
+  }
+
+  input[type="submit"] {
+    width:100%;
+    background:$red;
+    margin-bottom:30px;
+
+    @include box-shadow(none);
+
+    &:hover {
+      background:lighten($red, 5%);
+    }
   }
 
   #navigation {
     
     li {
       a {
-        background:$red;
+        background:$purple;
         display: block;
         height:100px;
         text-align: center;
         color:$white;
         line-height:100px;
         text-transform: uppercase;
-        
+        @include border-bottom-radius(4px);
+        @include border-top-radius(4px);
+
         @include transition(all .3s ease-in-out);
 
         &:hover {
-          background: lighten($red, 10%);
+          background: lighten($purple, 10%);
         }
       }  
     }
   }
 }
-
-
-
-

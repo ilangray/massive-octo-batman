@@ -1,0 +1,21 @@
+<div ng-controller="ReqCtrl" class="row">
+	<div class="columns large-8">
+		<input type="text" placeholder="Search for your major">
+	
+		<table class="table">
+			<thead>
+				<tr>
+					<th ng-repeat="header in headers">{{header}}</th>
+				</tr>
+			</thead>
+			<tbody>
+				<tr ng-repeat="req in requirements">
+					<td>{{req.title}}</td>
+					<td>{{req.status}}</td>
+					<td>{{req.term}}</td>
+				</tr>
+			</tbody>
+		</table>
+	</div>
+
+</div>

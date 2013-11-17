@@ -7,6 +7,10 @@ angular.module('uselessApp', [])
         templateUrl: 'views/home.html',
         controller: 'MainCtrl'
       })
+      .when('/search', {
+        templateUrl: 'views/search.html',
+        controller: 'MainCtrl'
+      })
       .otherwise({
         redirectTo: '/'
       });

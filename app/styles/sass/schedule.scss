@@ -1,0 +1,25 @@
+table#schedule {
+	width:100%;
+
+	thead {
+		th {
+			width:16.6666%;
+		}
+	}
+
+	th, td {
+		text-align: center;
+		padding:0.7em;
+	}
+}
+
+#finalize {
+	float:right;
+	@include box-shadow(none);
+	font-weight:100;
+	border:none;
+
+	&:hover {
+		background:lighten($red, 10%);
+	}
+}

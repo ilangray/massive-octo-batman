@@ -1,0 +1,32 @@
+<div class="header">
+	<a id="logo" href="/#/">
+		uSLIS
+	</a>
+</div>
+
+<div class="columns large-4" id="left-col">
+	<div id="search-bar">
+		<input type="text" >
+	</div>
+	<ul id="search-results">
+		<li class="result" ng-repeat="result in results">
+			<h5 class="course-title">{{result.title}}<span>{{result.number}}</span></h5>
+			<h6 class="course-prof">{{result.professor}}</h6>
+			<p class="course-desc">{{result.description}}</p>
+			<a href="#" class="button add-class">Add to Schedule</a>
+		</li>
+	</ul>
+</div>
+
+<div class="columns large-8" id="right-col">
+	<dl id="tabs">
+		<dd ng-repeat="tab in tabs" ng-click="activeTab(tab)" ng-class="activeClass(tab)"><a>{{tab.tab}}</a></dd>
+	</dl>
+
+	<ul>
+		<li ng-repeat="tab in tabs" ng-class="activeClass(tab)" ng-include="templateUrl(tab)">
+
+		</li>
+	</ul>
+
+</div>

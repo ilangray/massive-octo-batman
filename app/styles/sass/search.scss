@@ -1,0 +1,151 @@
+$navHeight: 60px;
+$borderThin: 1px solid $grey;
+
+body.search {
+	padding-top:$navHeight;
+}
+
+.header {
+	position:fixed;
+	top:0;
+	width:100%;
+	height:$navHeight;
+	z-index:1;
+	border-bottom:$borderThin;
+	background:$white;
+
+	#logo {
+		line-height:$navHeight;
+		font-size:36px;
+		margin-left:30px;
+		color:$black;
+	}
+}
+
+#left-col {
+	min-height:100%;
+	height:100%;
+	border-right:$borderThin;
+	background:lighten($grey, 10%);
+
+	#search-bar {
+		padding:30px 10px;
+
+		input[type=text] { 
+			font-size:24px;
+		
+			&:focus {
+				background:$white;
+			}
+		}
+	}
+
+	#search-results {
+		list-style: none;
+		padding:0 10px;
+		margin:0;
+		overflow-y: scroll;
+		position:relative;
+
+		.result {
+			background:$white;
+			border:$borderThin;
+			padding:15px 15px 3px 15px;
+			margin: 20px 0;
+
+			&:first-child {
+				margin-top:0;
+			}
+
+			@include clearfix;
+			@include border-bottom-radius(4px);
+  		@include border-top-radius(4px);
+		
+  		.course-title {
+  			margin: 4px 0 2px 0;
+  			span {
+  				float:right;
+  				display: inline-block;
+  				font-weight:100;
+
+  			}
+  		}
+
+  		.course-prof {
+  			font-weight:100;
+  			font-style: italic;
+  		}
+
+  		.add-class {
+  			float:right;
+  			padding:.6em;
+  			background:$purple;
+  			color:$white;
+  			font-weight:100;
+  			border:none;
+  			@include box-shadow(none);
+
+  			&:hover {
+  				background:lighten($purple, 10%);
+  			}
+  		}
+		}
+	}
+}
+
+#right-col {
+	background:$white;
+	position:fixed;
+	left:33.33333%;
+
+	#tabs {
+		width:100%;
+		border-bottom:$borderThin;
+		margin-top:10px;
+		@include clearfix;
+
+		dd {
+			display: inline-block;
+			float:left;
+			line-height:40px;
+			margin:0 5px;
+			min-width:100px;
+			padding:0 10px;
+			cursor:pointer;
+			text-align: center;
+
+			&:hover {
+				background:lighten($grey, 10%);
+			}
+
+			&.active {
+				border-bottom:1px solid $white;
+				margin-bottom:-1px;
+				border-top:$borderThin;
+				border-left:$borderThin;
+				border-right:$borderThin;
+				@include border-top-radius(4px);
+
+				&:hover {
+					background:$white;
+				}
+			}
+
+			a {
+				color:$purple;
+			}
+		}
+	}
+
+	ul {
+		li {
+			display: none;
+
+			&.active {
+				display: block;
+			}
+		}
+	}
+}
+
+
