@@ -1,81 +1,64 @@
-@import "../node_modules/foundation/scss/foundation";
+@import "bourbon/bourbon";
+@import "base";
+@import "../../node_modules/foundation/scss/foundation";
 
-/* Space out content a bit */
-body {
-  padding-top: 20px;
-  padding-bottom: 20px;
+html, body {
+  background-color:none;
+  background-image:url("../images/tuftsBlur.png");
+  background-size:cover;
+
 }
 
-/* Everything but the jumbotron gets side spacing for mobile first views */
-.header,
-.marketing,
-.footer {  
-  padding-left: 15px;
-  padding-right: 15px;
-}
+#search-area {
+  background:$greyDarkOp;
+  margin-top:140px;
+  padding:20px;
+  @include border-bottom-radius(4px);
+  @include border-top-radius(4px);
 
-/* Custom page header */
-.header {
-  border-bottom: 1px solid #e5e5e5;
-}
-/* Make the masthead heading the same height as the navigation */
-.header h3 {
-  margin-top: 0;
-  margin-bottom: 0;
-  line-height: 40px;
-  padding-bottom: 19px;
-}
+  #logo {
+    text-align: center;
+    
+    h1 {
+      color:$white;
+      font-size:72px;
+      margin-bottom:.1em;
+    }
 
-/* Custom page footer */
-.footer {
-  padding-top: 19px;
-  color: #777;
-  border-top: 1px solid #e5e5e5;
-}
+    h3 {
+      color:$white;
+      font-weight:100;
+      margin-bottom:1em;
+      padding:5px 0;
+    }
+  }
 
-/* Customize container */
-@media (min-width: 768px) {
-  .container {
-    max-width: 730px;
+  input {
+    font-size:24px;
+  }
+
+  #navigation {
+    
+    li {
+      a {
+        background:$red;
+        display: block;
+        height:100px;
+        text-align: center;
+        color:$white;
+        line-height:100px;
+        text-transform: uppercase;
+        
+        @include transition(all .3s ease-in-out);
+
+        &:hover {
+          background: lighten($red, 10%);
+        }
+      }  
+    }
   }
 }
-.container-narrow > hr {
-  margin: 30px 0;
-}
 
-/* Main marketing message and sign up button */
-.jumbotron {
-  text-align: center;
-  border-bottom: 1px solid #e5e5e5;
-}
-.jumbotron .btn {
-  font-size: 21px;
-  padding: 14px 24px;
-}
 
-/* Supporting marketing content */
-.marketing {
-  margin: 40px 0;
-}
-.marketing p + h4 {
-  margin-top: 28px;
-}
 
-/* Responsive: Portrait tablets and up */
-@media screen and (min-width: 768px) {
-  /* Remove the padding we set earlier */
-  .header,
-  .marketing,
-  .footer {
-    padding-left: 0;
-    padding-right: 0;
-  }
-  /* Space out the masthead */
-  .header {
-    margin-bottom: 30px;
-  }
-  /* Remove the bottom border on the jumbotron for visual effect */
-  .jumbotron {
-    border-bottom: 0;
-  }
-}
+

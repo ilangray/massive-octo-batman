@@ -1,10 +1,10 @@
 'use strict';
 
-angular.module('myApp', [])
+angular.module('uselessApp', [])
   .config(function ($routeProvider) {
     $routeProvider
       .when('/', {
-        templateUrl: 'views/main.html',
+        templateUrl: 'views/home.html',
         controller: 'MainCtrl'
       })
       .otherwise({
