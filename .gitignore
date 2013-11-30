@@ -1,5 +1,11 @@
 node_modules
 dist
-.tmp
+*.tmp
 .sass-cache
 app/bower_components
+*~
+*.lock
+*.DS_Store
+*.swp
+*.out
+grunt-angular-express-starter
