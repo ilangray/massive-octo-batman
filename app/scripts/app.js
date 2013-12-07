@@ -5,11 +5,11 @@ angular.module('uselessApp', [])
     $routeProvider
       .when('/', {
         templateUrl: 'views/home.html',
-        controller: 'MainCtrl'
+        controller: 'SearchCtrl'
       })
       .when('/search', {
         templateUrl: 'views/search.html',
-        controller: 'MainCtrl'
+        controller: 'SearchCtrl'
       })
       .otherwise({
         redirectTo: '/'
