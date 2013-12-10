@@ -1,8 +1,7 @@
 // var fs = require('fs');
 // var _ = require('underscore');
 
-angular.module('uselessApp')
-  .service('search', function() {
+uselessApp.service('searchService', function() {
     // Applies f(k,...,k,v) to every leaf in the object
     function flatMap(f, obj){
       if(_.isArray(obj)){

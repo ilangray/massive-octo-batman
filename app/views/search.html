@@ -11,9 +11,9 @@
 	</div>
 	<ul id="search-results">
 		<li class="result" ng-repeat="result in data | search:input">
-			<h5 class="course-title">{{result.title}}<span>{{result.number}}</span></h5>
-			<h6 class="course-prof">{{result.professor}}</h6>
-			<p class="course-desc">{{result.description}}</p>
+			<h5 class="course-title">{{result.name}}<span>{{result.num}}</span></h5>
+			<h6 class="course-prof">{{result.prof}}</h6>
+			<p class="course-desc">{{result.desc}}</p>
 			<a href="#" class="button add-class">Add to Schedule</a>
 		</li>
 	</ul>

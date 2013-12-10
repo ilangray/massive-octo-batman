@@ -1,7 +1,8 @@
 'use strict';
 
-angular.module('uselessApp', [])
-  .config(function ($routeProvider) {
+var uselessApp = angular.module('uselessApp', []);
+
+uselessApp.config(function ($routeProvider) {
     $routeProvider
       .when('/', {
         templateUrl: 'views/home.html',
