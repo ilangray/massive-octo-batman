@@ -47,9 +47,13 @@ angular.module('uselessApp')
 
     // Perform extension and query on list with function
     function searchIn(list, searchf){
-      return _.map(list, function(i){
+      return _.sortBy(_.map(list, function(i){
         return assignValue(_.partial(searchSum,searchf), i);
-      });
+      }),function(obj){return -obj.__search});
+    }
+
+    function searchInLimit(list, limit, searchf){
+      return _.take(searchIn(list,searchf),limit);
     }
 
     // Setup the search
@@ -96,10 +100,15 @@ angular.module('uselessApp')
       return fairQueryRec(query,false,0,0,q.toLocaleLowerCase());
     }
 
+    function nopQuery(){return 1;}
+
     // export some public functions
     return {
-      searchFor: searchFor,
-      searchField: searchField,
-      searchIn: searchIn
+      for: searchFor,
+      field: searchField,
+      in: searchIn,
+      inLimit: searchInLimit,
+      fair: fairQuery,
+      nop: nopQuery
     }
   });

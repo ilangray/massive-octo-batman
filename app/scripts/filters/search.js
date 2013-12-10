@@ -1,14 +1,21 @@
 angular.module('uselessApp')
-  .filter('search', function() {
+  .filter('search', function(search) {
     return function (items, input) {
-      // note for MJ: search through given items for classes matching the given input
-
-      /* 
-        this is just a stub search implementation so we can see that it actually works
-        should be replaced with MJ's badass search function(s) 
-      */
       if(_.isUndefined(input))
         return {};
-      return items;
+      return search.inLimit(items,20,search.field("tokens",search.for(input,search.fair)));
     }
+  })
+  .filter('truncate', function () {
+    return function (text, length, end) {
+      if (isNaN(length))
+        length = 10;
+      if (end === undefined)
+        end = "...";
+      if (text.length <= length || text.length - end.length <= length) {
+        return text;
+      } else {
+        return String(text).substring(0, length-end.length) + end;
+      }
+    };
   });
