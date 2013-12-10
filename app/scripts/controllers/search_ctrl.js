@@ -1,27 +1,12 @@
 angular.module('uselessApp')
- .controller('SearchCtrl', function ($scope, $filter) {
+ .controller('SearchCtrl', function ($scope, $filter, $http) {
     // This holds ALL classes. Every fuckin class. The whole thing
-    $scope.results = [
-      {
-        title: "Calc 1",
-        number: "MATH 0011",
-        professor: "Ming Chow",
-        description: "This is some stuff about that class that you want to take."
-      },
-           {
-        title: "Calc 2",
-        number: "MATH 0011",
-        professor: "Ming Chow",
-        description: "Blah blah blah."
-      },
-           {
-        title: "Calc 3",
-        number: "MATH 0011",
-        professor: "Ming Chow",
-        description: "This class blows."
-      },
 
-      ]
+    // get the class data async
+    $http.get('data.json')
+      .then(function(res){
+        $scope.data = res.data;
+      })
 
     $scope.tabs = [
       {
