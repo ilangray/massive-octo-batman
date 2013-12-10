@@ -39,13 +39,15 @@ sass/search.scss:2
 /Users/kennethcohen/.rvm/gems/ruby-1.9.3-p448/gems/sass-3.2.12/lib/sass/plugin/compiler.rb:203:in `block in update_stylesheets'
 /Users/kennethcohen/.rvm/gems/ruby-1.9.3-p448/gems/sass-3.2.12/lib/sass/plugin/compiler.rb:201:in `each'
 /Users/kennethcohen/.rvm/gems/ruby-1.9.3-p448/gems/sass-3.2.12/lib/sass/plugin/compiler.rb:201:in `update_stylesheets'
-/Users/kennethcohen/.rvm/gems/ruby-1.9.3-p448/gems/sass-3.2.12/lib/sass/plugin/compiler.rb:283:in `block in watch'
-/Users/kennethcohen/.rvm/gems/ruby-1.9.3-p448/gems/sass-3.2.12/vendor/listen/lib/listen/multi_listener.rb:108:in `call'
-/Users/kennethcohen/.rvm/gems/ruby-1.9.3-p448/gems/sass-3.2.12/vendor/listen/lib/listen/multi_listener.rb:108:in `on_change'
-/Users/kennethcohen/.rvm/gems/ruby-1.9.3-p448/gems/sass-3.2.12/vendor/listen/lib/listen/multi_listener.rb:117:in `block in initialize_adapter'
-/Users/kennethcohen/.rvm/gems/ruby-1.9.3-p448/gems/sass-3.2.12/vendor/listen/lib/listen/adapters/polling.rb:56:in `call'
-/Users/kennethcohen/.rvm/gems/ruby-1.9.3-p448/gems/sass-3.2.12/vendor/listen/lib/listen/adapters/polling.rb:56:in `poll'
-/Users/kennethcohen/.rvm/gems/ruby-1.9.3-p448/gems/sass-3.2.12/vendor/listen/lib/listen/adapters/polling.rb:32:in `block in start'
+/Users/kennethcohen/.rvm/gems/ruby-1.9.3-p448/gems/sass-3.2.12/lib/sass/plugin/compiler.rb:235:in `watch'
+/Users/kennethcohen/.rvm/gems/ruby-1.9.3-p448/gems/sass-3.2.12/lib/sass/plugin.rb:107:in `method_missing'
+/Users/kennethcohen/.rvm/gems/ruby-1.9.3-p448/gems/sass-3.2.12/lib/sass/exec.rb:463:in `watch_or_update'
+/Users/kennethcohen/.rvm/gems/ruby-1.9.3-p448/gems/sass-3.2.12/lib/sass/exec.rb:326:in `process_result'
+/Users/kennethcohen/.rvm/gems/ruby-1.9.3-p448/gems/sass-3.2.12/lib/sass/exec.rb:41:in `parse'
+/Users/kennethcohen/.rvm/gems/ruby-1.9.3-p448/gems/sass-3.2.12/lib/sass/exec.rb:21:in `parse!'
+/Users/kennethcohen/.rvm/gems/ruby-1.9.3-p448/gems/sass-3.2.12/bin/sass:9:in `<top (required)>'
+/Users/kennethcohen/.rvm/gems/ruby-1.9.3-p448/bin/sass:23:in `load'
+/Users/kennethcohen/.rvm/gems/ruby-1.9.3-p448/bin/sass:23:in `<main>'
 */
 body:before {
   white-space: pre;

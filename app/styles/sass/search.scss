@@ -5,6 +5,12 @@ body.search {
 	padding-top:$navHeight;
 }
 
+.container {
+	height:100%;
+	
+
+}
+
 .header {
 	position:fixed;
 	top:0;
@@ -23,10 +29,11 @@ body.search {
 }
 
 #left-col {
-	min-height:100%;
 	height:100%;
 	border-right:$borderThin;
 	background:lighten($grey, 10%);
+	position:fixed;
+	overflow-y:scroll;
 
 	#search-bar {
 		padding:30px 10px;
@@ -52,6 +59,7 @@ body.search {
 			border:$borderThin;
 			padding:15px 15px 3px 15px;
 			margin: 20px 0;
+			overflow-x: hidden;
 
 			&:first-child {
 				margin-top:0;
@@ -83,7 +91,7 @@ body.search {
   			color:$white;
   			font-weight:100;
   			border:none;
-  			@include box-shadow(none);
+  			box-shadow: none;
 
   			&:hover {
   				background:lighten($purple, 10%);
