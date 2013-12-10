@@ -1,5 +1,5 @@
 angular.module('uselessApp')
- .controller('SearchCtrl', function ($scope, $filter, $http) {
+ .controller('SearchCtrl', function ($scope, $filter, $http, schedule) {
     // This holds ALL classes. Every fuckin class. The whole thing
 
     // get the class data async
@@ -41,7 +41,7 @@ angular.module('uselessApp')
     $scope.templateUrl = function(tab) {
       return tab.partial;
     }
-    $scope.addClass = function(){
-      console.log('hi there');
+    $scope.addClass = function(result){
+      schedule.addClass(result);
     }
   });
