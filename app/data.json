@@ -1,0 +1,25 @@
+[{
+  "prof":"Anselm Flumer",
+  "id":"0002",
+  "name": "Algorithms",
+  "class": "COMP-0160",
+  "desc":"Introduction to the study of algorithms. Strategies such as divide-and-conquer, greedy methods, and dynamic programming. Graph algorithms, sorting, searching, integer arithmetic, hashing, and NP-complete problems. Recommendations:  COMP 15 and MATH 61 (formerly MATH 22).",
+  "tokens":[
+    "a","b","c","d"
+  ]},
+  {"prof":"Noah Bendelson",
+  "id":"0045",
+  "name": "Machine Structure & Assembly-language Programming",
+  "class": "COMP-0040",
+  "desc": "Structure of machine-level data and code, including memory, cache, registers, machine arithmetic, and bitwise operations. Encapsulating machine functionality through interfaces and abstract data types. Structure of assembly code, relocatable object code, and binary machine code, and the translations between them. Applications of machine-level operations and code translations in programming projects. Recommendations:  COMP 15.",
+  "tokens":[
+    "a","b","c","d"
+  ]},
+  {"prof":"Janis Freedman Bellow",
+  "id":"0010",
+  "name": "Philip Roth And Company",
+  "class": "ENG-0162-01",
+  "desc": "(Cross-listed as JS 162.)  Philip Roth's fiction alongside that of a number of writers, including Saul Bellow, Henry James, and Franz Kafka, whom Roth has either parodied, refracted, obsessed about or appropriated. Texts include Portnoy's Complaint, The Ghost Writer, The Breast and The Professor of Desire. Recommendations:  ENG 1, 2 REQUIRED or Fulfillment of College Writing Requirement.Recommendedthat the student already have taken either ENG 20,21,22, or 23.",
+  "tokens":[
+    "a","b","c","d",{"aa":"00"}
+  ]}]
