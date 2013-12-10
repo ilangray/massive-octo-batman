@@ -1,7 +1,7 @@
 angular.module('uselessApp')
   .filter('search', function(search) {
     return function (items, input) {
-      if(_.isUndefined(input))
+      if(_.isUndefined(input) || input === "")
         return {};
       return search.inLimit(items,20,search.field("tokens",search.for(input,search.fair)));
     }

@@ -106,7 +106,7 @@ angular.module('uselessApp')
     return {
       for: searchFor,
       field: searchField,
-      in: searchIn,
+      in: _.after(1,_.defer(_.debounce(searchIn, 300, true))),
       inLimit: searchInLimit,
       fair: fairQuery,
       nop: nopQuery
