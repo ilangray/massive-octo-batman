@@ -1,8 +1,8 @@
-// var fs = require('fs');
-// var _ = require('underscore');
-
 angular.module('uselessApp')
-  .service('search', function() {
+
+.service('search', function() {
+    console.log("loading search")
+
     // Applies f(k,...,k,v) to every leaf in the object
     function flatMap(f, obj){
       if(_.isArray(obj)){
@@ -102,27 +102,4 @@ angular.module('uselessApp')
       searchField: searchField,
       searchIn: searchIn
     }
-  })
-
-// var data = fs.readFileSync("./test_data.json");
-// var data = fs.readFileSync("./brandeis.classes.json");
-// var test = JSON.parse(data);
-
-/*
-
-// But we can make the modularity readable with:
-// var searchf = searchFor("noah",fairQuery);
-var fquery = searchField("tokens",fairQuery);
-var searchf = searchFor("computing",fquery);
-var results = searchIn(test,searchf);
-// fquery = searchField("prof",fairQuery);
-// searchf = searchFor("Storer",fquery);
-// results = searchIn(results,searchf);
-var sorted = _.sortBy(results,
-            function(obj){
-               // sort largest first
-              return obj.__search;
-            });
-console.log(sorted);
-
-*/
+  });
