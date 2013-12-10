@@ -211,10 +211,12 @@ uselessApp.service('search', function() {
   
     return function (items, input) {
       // note for MJ: search through given items for classes matching the given input
+      if(_.isUndefined(input))
+        return {};
       console.log(input);
-      var results = searchIn(items,searchFor(input,fairQuery));
-      return _.sortBy(_.filter(results,
-                              function(obj){return obj.__search > 0}),
+      var results = searchIn(items,searchField("dept",searchFor(input,fairQuery)));
+      // return items;
+      return _.sortBy(results,
                       function(obj){return obj.__search;});
     }
   })
