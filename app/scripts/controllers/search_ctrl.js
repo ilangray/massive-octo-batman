@@ -44,6 +44,8 @@ angular.module('uselessApp')
       return tab.partial;
     }
     $scope.addClass = function(result){
+      console.log("Adding result: ");
+      console.log(result);
       schedule.addClass(result);
     }
   });
