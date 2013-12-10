@@ -1,8 +1,6 @@
 angular.module('uselessApp')
 
 .service('search', function() {
-    console.log("loading search")
-
     // Applies f(k,...,k,v) to every leaf in the object
     function flatMap(f, obj){
       if(_.isArray(obj)){
@@ -47,9 +45,13 @@ angular.module('uselessApp')
 
     // Perform extension and query on list with function
     function searchIn(list, searchf){
-      return _.map(list, function(i){
+      return _.sortBy(_.map(list, function(i){
         return assignValue(_.partial(searchSum,searchf), i);
-      });
+      }),function(obj){return -obj.__search});
+    }
+
+    function searchInLimit(list, limit, searchf){
+      return _.take(searchIn(list,searchf),limit);
     }
 
     // Setup the search
@@ -96,10 +98,15 @@ angular.module('uselessApp')
       return fairQueryRec(query,false,0,0,q.toLocaleLowerCase());
     }
 
+    function nopQuery(){return 1;}
+
     // export some public functions
     return {
-      searchFor: searchFor,
-      searchField: searchField,
-      searchIn: searchIn
+      for: searchFor,
+      field: searchField,
+      in: _.after(1,_.defer(_.debounce(searchIn, 300, true))),
+      inLimit: searchInLimit,
+      fair: fairQuery,
+      nop: nopQuery
     }
   });
