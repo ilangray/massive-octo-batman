@@ -41,4 +41,7 @@ angular.module('uselessApp')
     $scope.templateUrl = function(tab) {
       return tab.partial;
     }
+    $scope.addClass = function(){
+      console.log('hi there');
+    }
   });
