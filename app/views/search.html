@@ -6,11 +6,17 @@
 
 <div ng-controller='SearchCtrl' class="columns large-4" id="left-col">
 	<div id="search-bar">
-		<input type="text" ng-model='searchText'>  <!-- user's search term = $scope.input -->
+		<input type="text" ng-model='searchText'>
+		Search by: 
+		<form name="searchFor">
+			<input type="radio" ng-model="searchField" value="dept"> Department
+			<input type="radio" ng-model="searchField" value="prof"> Professor
+			<input type="radio" ng-model="searchField" value="tokens"> Everything
+		</form>
 		
 	</div>
 	<ul id="search-results">
-		<li class="result" ng-repeat="result in data | search:searchText">
+		<li class="result" ng-repeat="result in data | search:searchText:5:searchField">
 			<h5 class="course-title">{{result.name}}<span>{{result.num}}</span></h5>
 			<h6 class="course-prof">{{result.prof}}</h6>
 			<p class="course-desc">{{result.desc | truncate:140}}</p>

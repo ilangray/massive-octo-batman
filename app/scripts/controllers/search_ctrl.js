@@ -34,6 +34,8 @@ angular.module('uselessApp')
       
     }
 
+    $scope.searchFor = "all";
+
     $scope.activeClass = function(tab) {
       return tab.active === true ? "active" : "";
     }

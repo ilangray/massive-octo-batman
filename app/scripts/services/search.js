@@ -1,8 +1,6 @@
 angular.module('uselessApp')
 
 .service('search', function() {
-    console.log("loading search")
-
     // Applies f(k,...,k,v) to every leaf in the object
     function flatMap(f, obj){
       if(_.isArray(obj)){
