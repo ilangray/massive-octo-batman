@@ -21,7 +21,7 @@
 		<li class="result" ng-repeat="result in results | limitTo: 20">
 			<h5 class="course-title">{{result.name}}<span>{{result.num}}</span></h5>
 			<h6 class="course-prof">{{result.prof}}</h6>
-			<p class="course-desc">{{result.desc}}</p>
+			<p class="course-desc">{{result.desc | truncate:140}}</p>
 			<a href=""ng-click="addClass(result)" class="button add-class">Add to Schedule</a>
 		</li>
 	</ul>
