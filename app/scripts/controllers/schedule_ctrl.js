@@ -57,7 +57,6 @@ angular.module('uselessApp')
 
     // sets $scope.isDisabled to false if >=2 classes overlap, true otherwise
     var validate = function () {
-      console.log("validating...");
 
       // cant have no classes 
       if ($scope.classes.length == 0) {
