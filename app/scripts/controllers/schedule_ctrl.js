@@ -27,6 +27,8 @@ angular.module('uselessApp')
       var toInteger = function (str) {
         var parts = str.split(":");
         var hour = parseInt(parts[0]);
+        console.log("Parts:");
+        console.log(parts);
         var minutes = parseInt(parts[1].substring(0,2));
         var meridian = parts[1].substring(2, 4);
 
@@ -36,6 +38,8 @@ angular.module('uselessApp')
 
       // StartA > EndB || EndA < StartB
       var _overlap = function (range1, range2) {
+        if (range1 == "!" || range2 == "!") return;
+
         // split into start and end times
         range1 = range1.split("-"); 
         range2 = range2.split("-");
