@@ -3,7 +3,6 @@ angular.module('uselessApp')
     return function (items, input) {
       if(_.isUndefined(input) || input === "")
         return {};
-      console.log(field)
       var results = search.in(results,
                 search.field("prof",
                 search.for(input,
