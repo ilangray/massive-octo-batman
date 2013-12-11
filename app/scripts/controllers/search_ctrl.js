@@ -34,10 +34,8 @@ angular.module('uselessApp')
       
     }
 
-    $scope.searchFor = "tokens";
-
     $scope.searcher = function(){
-      $scope.results = $filter('search')($scope.data,$scope.searchText,$scope.searchField);
+      $scope.results = $filter('search')($scope.data,$scope.searchText);
     }
 
     _.each(['searchText','searchField'],function(thing){
