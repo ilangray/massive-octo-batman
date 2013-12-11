@@ -15,4 +15,9 @@ Setup
 
 `grunt` should open the landing screen in your browser. If not, head to `localhost:9000`
 
-NB: there are some other tools you will need, like Ruby and `compass`, but `grunt` wont let you through until you have them.
+Notes
+-----
+* There are some other tools you will need, like Ruby and `compass`,
+but `grunt` wont let you through until you have them.
+
+* The class data is not Tufts'—it's Brandeis'.
