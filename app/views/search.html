@@ -7,12 +7,14 @@
 <div ng-controller='SearchCtrl' class="columns large-4" id="left-col">
 	<div id="search-bar">
 		<input type="text" ng-model='searchText'>
-		Search by: 
-		<form name="searchFor">
-			<input type="radio" ng-model="searchField" value="dept"> Department
-			<input type="radio" ng-model="searchField" value="prof"> Professor
-			<input type="radio" ng-model="searchField" value="tokens"> Everything
-		</form>
+		<div name="advanced-search" ng-hide="true">
+			Search by: 
+			<form name="searchFor">
+				<input type="radio" ng-model="searchField" value="dept"> Department
+				<input type="radio" ng-model="searchField" value="prof"> Professor
+				<input type="radio" ng-model="searchField" value="tokens"> Everything
+			</form>
+		</div>
 		
 	</div>
 	<ul id="search-results">

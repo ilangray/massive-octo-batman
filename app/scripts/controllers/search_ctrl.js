@@ -36,13 +36,13 @@ angular.module('uselessApp')
 
     $scope.searchFor = "tokens";
 
-    function searcher(){
-      return $filter('search')($scope.data,$scope.searchText,$scope.searchField);
+    $scope.searcher = function(){
+      $scope.results = $filter('search')($scope.data,$scope.searchText,$scope.searchField);
     }
 
     _.each(['searchText','searchField'],function(thing){
       $scope.$watch(thing,function(){
-        $scope.results = searcher();
+        $scope.searcher();
       });
     });
 
