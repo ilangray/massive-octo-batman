@@ -47,7 +47,7 @@ angular.module('uselessApp')
       }
 
       var b = _.all(days, function (day) {
-        return _overlap(c1[day], c2[day]);
+        return _overlap(c1.times[day], c2.times[day]);
       });
 
       console.log("Overlap found = " + b);
@@ -77,7 +77,7 @@ angular.module('uselessApp')
     }
 
   	$scope.$watch(function(){return schedule.classData;}, function(newVal, oldVal){
-  		$scope.classes = newVal;
+  		
 		var views = document.getElementsByClassName('class');
   		for(var i = 0; i < views.length; i++){
 	  		views[i].parentNode.removeChild(views[i]);
@@ -86,6 +86,7 @@ angular.module('uselessApp')
   		for(var i = 0; i < views.length; i++){
 	  		views[i].parentNode.removeChild(views[i]);
 	  	}
+	  	$scope.classes = newVal;
      	validate();
 
   		angular.forEach($scope.classes, function(item){
