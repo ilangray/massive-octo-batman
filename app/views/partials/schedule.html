@@ -1,20 +1,19 @@
-<table ng-controller="SchedCtrl" id="schedule" class="table">
-	<thead>
-		<tr>
-			<th ng-repeat="day in days">{{day}}</th>
-		</tr>	
-	</thead>
+<!-- <table ng-controller="SchedCtrl" id="schedule" class="table">
 
-	<tbody>
-		<tr ng-repeat="hour in hours">
-			<td>{{hour}}</td>
-			<td></td>
-			<td></td>
-			<td></td>
-			<td></td>
-			<td></td>
-		</tr>
-	</tbody>
 </table>
+ -->
+<div ng-controller="SchedCtrl">
+	<div id="schedule">
+		<!-- hour column -->
+		<div class="col" id="hours">
+			<div class="hour">Hour</div>
+			<div class="hour" ng-repeat="hour in hours"><span>{{hour}}</span></div>
+		</div>
 
-<button class="button" id="finalize">Finalize</button>
+		<div class="col" ng-repeat="day in days">
+			<div class="hour">{{day}}</div>
+		</div>
+	</div>
+
+	<button class="button" id="finalize">Finalize</button>
+</div>
