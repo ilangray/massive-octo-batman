@@ -3,7 +3,9 @@ angular.module('uselessApp')
     // This holds ALL classes. Every fuckin class. The whole thing
 
     // get the class data async
-    $http.get('data.json')
+    $http({method:'GET',
+          url:'data.json',
+          cache:true})
       .then(function(res){
         $scope.data = res.data;
       })
