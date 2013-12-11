@@ -63,4 +63,8 @@
 	&:hover {
 		background:lighten($red, 10%);
 	}
+
+	&:disbled {
+		background:#333;
+	}
 }
