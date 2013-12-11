@@ -4,7 +4,15 @@ angular.module('uselessApp')
   	$scope.classes = [];
     $scope.days = ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday"];
     $scope.hours = ["7AM", "8AM", "9AM", "10AM", "11AM", "12PM", "1PM", "2PM", "3PM", "4PM", "5PM", "6PM", "7PM", "8PM", "9PM", "10PM"];
-  	$scope.$watch(function(){return schedule.classData;}, function(newVal, oldVal){
+  	$scope.$watch(function(){return schedule.classData;}, function(newVal, oldVal){	 	
+  		var views = document.getElementsByClassName('class');
+  		for(var i = 0; i < views.length; i++){
+	  		views[i].parentNode.removeChild(views[i]);
+	  	}
+	  	views = document.getElementsByClassName('class');
+  		for(var i = 0; i < views.length; i++){
+	  		views[i].parentNode.removeChild(views[i]);
+	  	}
   		$scope.classes = newVal;
   		angular.forEach($scope.classes, function(item){
   			var times = item.times;
@@ -20,7 +28,8 @@ angular.module('uselessApp')
   				}
   			});
   		});
-  		function findY(time){
+  	}, true);
+  	function findY(time){
   			var array = time.split("");
   			var hour = parseInt(time.split(':')[0]);
   			var minutes = parseInt(time.split(':')[1][0] + time.split(':')[1][1]);
@@ -41,16 +50,20 @@ angular.module('uselessApp')
   				if(day === elem) spot = index;
   			});
   			var parent = document.getElementsByClassName('day')[spot];
-  			console.log(height);
   			var style = "style='position:absolute;top:" + y + "px;height:" + height + "px'";
-  			var div = "<div " + style + "class='class'><span class='courseTitle'>" + course.num + "</span></div>"
+  			var div = "<div " + style + "class='class' id='" + course.$$hashKey + "'><span class='courseTitle'>" + course.num + "</span></div>"
   			parent.innerHTML = parent.innerHTML + div;
   		}
-  			// var times = courses.times;
-	  		// var day_times = [];
-	  		// for(var index in times){
-	  		// 	console.log(times[index]);
-	  		// }
+  		$scope.removeClass = function(index){
   		
-  	}, true);
+            	$scope.classes.remove(index, 0);
+        
+  		}
+  		// Array Remove - By John Resig (MIT Licensed)
+		Array.prototype.remove = function(from, to) {
+		  var rest = this.slice((to || from) + 1 || this.length);
+		  this.length = from < 0 ? this.length + from : from;
+		  return this.push.apply(this, rest);
+		};
+
   });

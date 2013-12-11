@@ -32,4 +32,10 @@
 	</div>
 
 	<button class="button" id="finalize">Finalize</button>
+	<table>
+		<tbody>
+			<tr ng-repeat="course in classes"><td>{{course.name}}</td><td><button ng-click='removeClass($index)'>Remove</button></td></tr>
+		</tbody>
+	</table>
 </div>
+
