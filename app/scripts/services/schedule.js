@@ -3,7 +3,8 @@ angular.module('uselessApp')
 .service('schedule', function() {
     var classData = [];
     function addClass(course){
-      if(hasBeenAdded(course)) classData.push(course);
+
+      if(!hasBeenAdded(course)) classData.push(course);
       else console.log("error");
       console.log(classData);
     }
