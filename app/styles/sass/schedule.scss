@@ -1,17 +1,42 @@
-table#schedule {
+#schedule {
 	width:100%;
+	height:550px;	
 
-	thead {
-		th {
-			width:16.6666%;
+	position:relative;
+	margin-bottom:30px;
+	border:1px solid $grey;
+	border-radius:6px;
+
+	@include clearfix;
+
+	.col {
+		width:16.66666%;
+		height:100%;
+		background:lighten($grey, 10%);
+		border-right:1px solid $grey;
+		float:left;
+		display: inline-block;
+		position:relative;
+	}
+
+	.hour {
+		display: block;
+		text-align: center;
+		padding:3px 0;
+		border-bottom:1px solid $grey;
+		font-weight:100;
+		width:100%;
+
+		&:first-child {
+			font-weight:bold;
 		}
 	}
 
-	th, td {
-		text-align: center;
-		padding:0.7em;
+	#hours {
+		border-right:1px solid $grey;
 	}
 }
+
 
 #finalize {
 	float:right;
