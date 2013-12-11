@@ -34,7 +34,17 @@ angular.module('uselessApp')
       
     }
 
+    function searcher(){
+      return $filter('search')($scope.data,$scope.searchText,10,$scope.searchFor);
+    }
+
     $scope.searchFor = "all";
+
+    _.each(['searchText','searchField'],function(thing){
+      $scope.$watch(thing,function(){
+        $scope.results = searcher();
+      });
+    });
 
     $scope.activeClass = function(tab) {
       return tab.active === true ? "active" : "";

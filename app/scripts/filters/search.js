@@ -3,6 +3,8 @@ angular.module('uselessApp')
     return function (items, input, length, field) {
       if(_.isUndefined(input) || input === "")
         return {};
+      length = length || 10;
+      field = field || 'tokens'
       return search.inLimit(items,length,
              search.field(field,
              search.for(input,
