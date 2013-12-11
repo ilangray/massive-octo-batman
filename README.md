@@ -14,3 +14,8 @@ Setup
 1. run `grunt server`
 
 `grunt` should open the landing screen in your browser. If not, head to `localhost:9000`
+
+
+Note
+----
+The class data is not Tufts'. It's Brandeis'.
