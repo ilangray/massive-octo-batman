@@ -1,9 +1,12 @@
+@import url(http://fonts.googleapis.com/css?family=Ubuntu:300,400,500);
+@import url(http://fonts.googleapis.com/css?family=Ubuntu:300,400,500);
 html, body {
   background: white;
   background-color: white;
   width: 100%;
   min-height: 100%;
-  height: 100%; }
+  height: 100%;
+  font-family: "Ubuntu", sans-serif !important; }
 
 .table {
   width: 100%; }
@@ -186,7 +189,7 @@ body.search {
 
 #schedule {
   width: 100%;
-  height: 550px;
+  height: 500px;
   position: relative;
   margin-bottom: 30px;
   border: 1px solid #e2e2e2;
@@ -220,7 +223,7 @@ body.search {
   #schedule .hour {
     display: block;
     text-align: center;
-    padding: 3px 0;
+    padding: 1.5px 0;
     border-bottom: 1px solid #e2e2e2;
     font-weight: 100;
     width: 100%; }
@@ -253,7 +256,7 @@ body {
   color: #222222;
   padding: 0;
   margin: 0;
-  font-family: "Helvetica Neue", "Helvetica", Helvetica, Arial, sans-serif;
+  font-family: "Ubuntu", sans-serif;
   font-weight: normal;
   font-style: normal;
   line-height: 1;
@@ -1300,7 +1303,7 @@ p {
 
 /* Default header styles */
 h1, h2, h3, h4, h5, h6 {
-  font-family: "Helvetica Neue", "Helvetica", Helvetica, Arial, sans-serif;
+  font-family: "Ubuntu", sans-serif;
   font-weight: bold;
   font-style: normal;
   color: #222222;
