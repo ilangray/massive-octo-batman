@@ -42,7 +42,7 @@
 	.hour {
 		display: block;
 		text-align: center;
-		padding:3px 0;
+		padding:1.5px 0;
 		border-bottom:1px solid $grey;
 		font-weight:100;
 		width:100%;
@@ -66,5 +66,9 @@
 
 	&:hover {
 		background:lighten($red, 10%);
+	}
+
+	&:disbled {
+		background:#333;
 	}
 }

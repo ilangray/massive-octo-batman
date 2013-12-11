@@ -19,7 +19,7 @@
 		</div>
 
 		<div class="col day">
-			<div class="hour">Wednsday</div>
+			<div class="hour">Wednesday</div>
 		</div>
 
 		<div class="col day">
@@ -31,11 +31,15 @@
 		</div>
 	</div>
 
-	<button class="button" id="finalize">Finalize</button>
+
+	<button class="button" id="finalize" ng-disabled="isDisabled" ng-click="validateClasses()">Finalize</button>
 	<table>
 		<tbody>
 			<tr ng-repeat="course in classes"><td>{{course.name}}</td><td><button ng-click='removeClass($index)'>Remove</button></td></tr>
 		</tbody>
 	</table>
+
+	
+
 </div>
 
