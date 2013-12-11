@@ -34,11 +34,11 @@ angular.module('uselessApp')
       
     }
 
-    function searcher(){
-      return $filter('search')($scope.data,$scope.searchText,10,$scope.searchFor);
-    }
+    $scope.searchFor = "tokens";
 
-    $scope.searchFor = "all";
+    function searcher(){
+      return $filter('search')($scope.data,$scope.searchText,$scope.searchField);
+    }
 
     _.each(['searchText','searchField'],function(thing){
       $scope.$watch(thing,function(){

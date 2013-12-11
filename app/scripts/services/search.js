@@ -57,7 +57,7 @@ angular.module('uselessApp')
     // Setup the search
     // returns an object that can be passed in as "searchf"
     function searchFor(query,queryf){
-      return _.partial(queryf,query.toLocaleLowerCase());
+      return _.partial(queryf,query.toLowerCase());
     }
 
     // Search in a field of the object
@@ -95,7 +95,7 @@ angular.module('uselessApp')
       if(!_.isString(q)){
         return 0;
       }
-      return fairQueryRec(query,false,0,0,q.toLocaleLowerCase());
+      return fairQueryRec(query,false,0,0,q.toLowerCase());
     }
 
     function nopQuery(){return 1;}
@@ -104,7 +104,7 @@ angular.module('uselessApp')
     return {
       for: searchFor,
       field: searchField,
-      in: _.defer(_.debounce(searchIn, 500)),
+      in: _.debounce(_.throttle(searchIn,200),200),
       inLimit: searchInLimit,
       fair: fairQuery,
       nop: nopQuery

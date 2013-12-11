@@ -1,11 +1,11 @@
 angular.module('uselessApp')
   .filter('search', function(search) {
-    return function (items, input, length, field) {
+    return function (items, input, field) {
       if(_.isUndefined(input) || input === "")
         return {};
-      length = length || 10;
       field = field || 'tokens'
-      return search.inLimit(items,length,
+      console.log(field)
+      return search.in(items,
              search.field(field,
              search.for(input,
              search.fair)));
