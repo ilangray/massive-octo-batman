@@ -88,6 +88,8 @@ angular.module('uselessApp')
         body.substring(1));
     }
 
+
+
     // Prepare the body to ensure it is the value and is a string
     // Really: fairQuery(query, key...key...key......value)
     function fairQuery(query){
@@ -98,15 +100,46 @@ angular.module('uselessApp')
       return fairQueryRec(query,false,0,0,q.toLowerCase());
     }
 
+    function wholeWordQueryRec(query, body, beg){
+      if(query === null || query[0] === "")
+        return 1;
+      if(body === "")
+        return 0;
+      if(body[0] === " ") {
+        return wholeWordQueryRec(query, body.substring(1), false);
+      }
+      if(query[0] === body[0]){
+        return 1 + wholeWordQueryRec(query.substring(1),
+                                     body.substring(1),
+                                     true);
+      }
+      else if(beg){
+        return wholeWordQueryRec(query, body.substring(1), false);
+        } else {
+          return wholeWordQueryRec(query,
+                          _.drop(body.split(" "),1).join(" "),
+                                    false);
+        }
+      }
+
+    function wordQuery(query){
+      var q = _.last(arguments);
+      if(!_.isString(q)){
+        return 0;
+      }
+      return wholeWordQueryRec(query, q, false);
+    }
+
     function nopQuery(){return 1;}
 
     // export some public functions
     return {
       for: searchFor,
       field: searchField,
-      in: _.debounce(searchIn,200),
+      in: _.debounce(searchIn,50),
       inLimit: searchInLimit,
       fair: fairQuery,
-      nop: nopQuery
+      nop: nopQuery,
+      word: wordQuery
     }
   });

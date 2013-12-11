@@ -8,7 +8,7 @@ angular.module('uselessApp')
       return search.in(items,
              search.field(field,
              search.for(input,
-             search.fair)));
+             search.word)));
     }
   })
   .filter('truncate', function () {
