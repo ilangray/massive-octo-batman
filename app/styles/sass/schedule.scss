@@ -17,6 +17,22 @@
 		float:left;
 		display: inline-block;
 		position:relative;
+
+		.class {
+			width:100%;
+			background:$purple;
+			color:$white;
+			font-size:12px;
+			text-align: center;
+			border-radius:2px;
+
+			span {
+				display: block;
+				width:100%;
+			}
+
+			.timeSlot {font-weight:100;}
+		}
 	}
 
 	.hour {
