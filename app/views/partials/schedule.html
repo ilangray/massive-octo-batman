@@ -1,28 +1,30 @@
 <div ng-controller="SchedCtrl">
 
-	<ul>
-		<li ng-repeat="class in classes">{{class.name}}</li>
-	</ul>
+	<div id='schedule' class='table'>
 
-	<table id="schedule" class="table">
-		<thead>
-			<tr>
-				<th ng-repeat="day in days">{{day}}</th>
-			</tr>	
-		</thead>
+		<div class="test">
+			<div class="hour" ng-repeat="hour in hours">{{hour}}</div>
+		</div>
 
-		<tbody>
-			<tr ng-repeat="hour in hours">
-				<td>{{hour}}</td>
-				<td></td>
-				<td></td>
-				<td></td>
-				<td></td>
-				<td></td>
-			</tr>
-		</tbody>
-	</table>
-
+		<div class="test days" ng-repeat="day in days">
+			<div class="header">{{day}}</div>
+		</div>
+	</div>
+	
 	<button class="button" id="finalize">Finalize</button>
-
 </div>
+		
+<!-- 			<div class='weekday' ng-repeat="day in days">{{day}}
+
+			</div>
+
+			<div ng-repeat="hour in hours">
+				<div>{{hour}}</div>
+			</div>
+
+			<div id='class_container'>
+				<div class='column' ng-repeat="day in days">
+				</div>
+			</div> -->
+	
+
